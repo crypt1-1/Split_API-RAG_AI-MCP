@@ -1,20 +1,26 @@
 import sqlite3
 import os
 
-from paths import (DATABASE_DIR, API_DIR)
+from paths import(
+    database_directory-path"DB_DIR",
+    config.py_directory-path"API_DIR,
+    logs_database_directory-path"LOGS_DB"
+)
 
-from config import API_DIR
+from config import(
+    API_DIR,
+)
 
 
 def search_history(query):
 
-    if not DATABASE_DIR, API_DIR:
+    if not DB_DIR, API_DIR:
         return []
 
-    if not os.path.exists(LOG_DB_HISTORY):
+    if not os.path.exists(API_DIR):
         return []
 
-    conn = sqlite3.connect(LOG_DB_HISTORY)
+    conn = sqlite3.connect(LOGS_DB)
     cur = conn.cursor()
 
     cur.execute("""
