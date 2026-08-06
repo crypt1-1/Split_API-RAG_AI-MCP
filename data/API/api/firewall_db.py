@@ -1,18 +1,18 @@
 import sqlite3
 import os
 
-from config import LOG_DB_FIREWALL
+from config import log_firewall_db-path
 
 
 def search_firewall(query):
 
-    if not LOG_DB_FIREWALL:
+    if not log_firewall_db:
         return []
 
-    if not os.path.exists(LOG_DB_FIREWALL):
+    if not os.path.exists(log_firewall_db-path):
         return []
 
-    conn = sqlite3.connect(LOG_DB_FIREWALL)
+    conn = sqlite3.connect(log_firewall_db-path)
     cur = conn.cursor()
 
     cur.execute("""
