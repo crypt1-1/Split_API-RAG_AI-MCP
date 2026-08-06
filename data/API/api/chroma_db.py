@@ -1,8 +1,8 @@
 import chromadb
 
-from config import CHROMA_DIR
+from config import config.py-path
 
-client = chromadb.PersistentClient(path=CHROMA_DIR)
+client = chromadb.PersistentClient(path=chroma-path)
 
 collection = client.get_or_create_collection(
     name="docs"
